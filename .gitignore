@@ -1,0 +1,12 @@
+# Yerel araç ayarları ve yedekler
+.claude/
+_yedek/
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Diğer
+node_modules/
+.DS_Store
+Thumbs.db

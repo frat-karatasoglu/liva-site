@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liva Pastane &amp; Çerez | Kovancılar Baklava, Tatlı ve Kuruyemiş</title>
+    <meta name="description"
+        content="Kovancılar'da fıstıklı baklava ve kadayıf, pasta, sütlü tatlılar, kuruyemiş ve çerez. Salonda oturun ya da paket yaptırın. Çarşıbaşı Mah, Elazığ Cd. No: 27/C.">
+    <meta property="og:title" content="Liva Pastane &amp; Çerez | Kovancılar">
+    <meta property="og:description" content="Tepsi tepsi tatlı, kavanoz kavanoz çerez. Yöresel Anadolu lezzetleri.">
+    <meta name="theme-color" content="#f7ecd6">
+    <link rel="icon" href="img/favicon.png" sizes="64x64" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;700&family=Norican&display=swap"
+        rel="stylesheet">
+    <link rel="preload" as="image" href="img/vitrin-kemer.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Açılış animasyonu için erken bayrak (sayfa çizilmeden önce çalışır)
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var ONCE = false; // true yapılırsa açılış animasyonu oturum başına bir kez oynar
+            try {
+                // Adres sonuna ?animasyon=1 eklenirse bu tarayıcıda animasyonlar, sistem "hareketi azalt"
+                // dese bile oynar. ?animasyon=0 bunu geri alır.
+                var q = location.search, force = false;
+                if (/[?&]animasyon=0(&|$)/.test(q)) { try { localStorage.removeItem('livaMotion'); } catch (e) { } }
+                else if (/[?&]animasyon(=1)?(&|$)/.test(q)) { force = true; try { localStorage.setItem('livaMotion', '1'); } catch (e) { } }
+                try { force = force || localStorage.getItem('livaMotion') === '1'; } catch (e) { }
+                if (force) d.classList.add('motion-ok');
+                var seen = ONCE && sessionStorage.getItem('livaIntro');
+                var calm = !force && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+                var deep = location.hash && location.hash !== '#top';
+                if (!seen && !calm && !deep) {
+                    d.classList.add('intro-on');
+                    d.style.setProperty('--intro', '2.2s');
+                    if (ONCE) sessionStorage.setItem('livaIntro', '1');
+                }
+            } catch (e) { }
+        })();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Liva Pastane & Çerez",
+        "telephone": "+905327970793",
+        "sameAs": ["https://www.instagram.com/livapastanecerez/"],
+        "hasMap": "https://maps.app.goo.gl/EhvRi629uMp2oGf47",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Çarşıbaşı Mah, Elazığ Cd. No: 27/C",
+            "postalCode": "23850",
+            "addressLocality": "Kovancılar",
+            "addressRegion": "Elazığ",
+            "addressCountry": "TR"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="intro" id="intro" aria-hidden="true">
+        <div class="door door-l"></div>
+        <div class="door door-r"></div>
+        <div class="intro-center">
+            <svg class="intro-arch" viewBox="-12 -13 124 149">
+                <path class="i-fill" d="M0 125 L0 59.16 A60 60 0 0 1 50 0 A60 60 0 0 1 100 59.16 L100 125 Z" />
+                <text class="i-word" x="50" y="80" text-anchor="middle" font-family="Norican, cursive" font-size="50" fill="#2a150c">Liva</text>
+                <path class="i-orn" d="M27 99h17M56 99h17" fill="none" stroke="#c98a1c" stroke-width="1.2" stroke-linecap="round" />
+                <path class="i-orn" d="M50 95.4 53.6 99 50 102.6 46.4 99z" fill="#e3a83a" />
+                <text class="i-sub" x="50" y="113" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="5.8" font-weight="700" letter-spacing="1.7" fill="#6b4b37">PASTANE &amp; ÇEREZ</text>
+                <path class="i-line i-line-1" pathLength="1" d="M0 125 L0 59.16 A60 60 0 0 1 50 0 A60 60 0 0 1 100 59.16 L100 125 Z" />
+                <path class="i-line i-line-2" pathLength="1" d="M-10.00 135.00 L-10.00 59.16 A70.00 70.00 0 0 1 50 -10.12 A70.00 70.00 0 0 1 110.00 59.16 L110.00 135.00" />
+            </svg>
+            <p class="intro-tag">Yöresel Anadolu lezzetleri</p>
+        </div>
+    </div>
+
+    <header class="site-header" id="top">
+        <div class="bar">
+            <a class="brand" href="#top" aria-label="Liva Pastane &amp; Çerez, ana sayfa">
+                <span class="brand-word"><span class="brand-name">Liva</span><span class="brand-sub">Pastane &amp; Çerez</span></span>
+            </a>
+            <nav class="nav" id="nav" aria-label="Ana menü">
+                <a href="#top" aria-current="page">Ana Sayfa</a>
+                <a href="menu.html">Menü</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+            <a class="btn btn-choc bar-cta" href="https://wa.me/905327970793?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1.5-4.4A8.5 8.5 0 1 1 20.5 11.5z" />
+                    <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+                </svg>
+                WhatsApp'tan yaz
+            </a>
+            <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+                <span class="sr-only">Menüyü aç veya kapat</span><i></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-wash" aria-hidden="true"></div>
+            <div class="hero-in">
+                <div class="hero-copy">
+                    <p class="eyebrow rise">Yöresel Anadolu lezzetleri · Kovancılar</p>
+                    <h1 class="rise" style="--d:.08s">Tepsi tepsi <em>tatlı</em>, kavanoz kavanoz <em>çerez</em>.</h1>
+                    <p class="lede rise" style="--d:.16s">Fıstıklı baklava ve kadayıftan pastalara, taze kuruyemişten yöresel
+                        ürünlere kadar her şey tek çatı altında. İster salonda çayınla otur, ister paket yaptır.</p>
+                    <div class="cta-row rise" style="--d:.24s">
+                        <a class="btn btn-gold" href="menu.html">Menüyü gör</a>
+                        <a class="btn btn-ghost"
+                            href="https://maps.app.goo.gl/EhvRi629uMp2oGf47"
+                            target="_blank" rel="noopener">Yol tarifi al</a>
+                    </div>
+                    <ul class="facts rise" style="--d:.32s">
+                        <li><strong>4,8</strong>Google Haritalar puanı</li>
+                        <li>Salonda oturma alanı</li>
+                        <li>Paket yaptırabilirsiniz</li>
+                    </ul>
+                </div>
+
+                <div class="hero-art">
+                    <svg class="arch-svg" viewBox="-12 -13 124 149" role="img"
+                        aria-label="Vitrinde çikolatalı, fıstıklı ve beyaz pastalar, altında tepsi tatlıları">
+                        <defs>
+                            <clipPath id="archClip"><path d="M0 125 L0 59.16 A60 60 0 0 1 50 0 A60 60 0 0 1 100 59.16 L100 125 Z" /></clipPath>
+                        </defs>
+                        <path class="ring ring-2" pathLength="1" d="M-10.00 135.00 L-10.00 59.16 A70.00 70.00 0 0 1 50 -10.12 A70.00 70.00 0 0 1 110.00 59.16 L110.00 135.00" />
+                        <path class="ring ring-1" pathLength="1" d="M-6.20 131.20 L-6.20 59.16 A66.20 66.20 0 0 1 50 -6.28 A66.20 66.20 0 0 1 106.20 59.16 L106.20 131.20" />
+                        <image href="img/vitrin-kemer.jpg" x="0" y="0" width="100" height="125"
+                            preserveAspectRatio="xMidYMid slice" clip-path="url(#archClip)" />
+                    </svg>
+                    <img class="orb orb-1" src="img/orb-midye.jpg" alt="Fıstıklı midye baklava" width="360" height="360">
+                    <img class="orb orb-2" src="img/orb-sarma.jpg" alt="Fıstık sarma" width="360" height="360">
+                    <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+                        <circle cx="60" cy="60" r="58" fill="#e3a83a" />
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="#21100a" stroke-opacity=".35" />
+                        <defs><path id="sealPath" d="M60 60 m-41 0 a41 41 0 1 1 82 0 a41 41 0 1 1 -82 0" /></defs>
+                        <text font-family="Hanken Grotesk, sans-serif" font-size="10" font-weight="700" fill="#21100a">
+                            <textPath href="#sealPath" textLength="250" lengthAdjust="spacing">YÖRESEL ANADOLU LEZZETLERİ · KOVANCILAR ·</textPath>
+                        </text>
+                        <text x="60" y="71" text-anchor="middle" font-family="Norican, cursive" font-size="32" fill="#21100a">Liva</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="tiles" aria-hidden="true"></div>
+
+        <section class="sec menu-tease" id="menu">
+            <div class="wrap tease-in">
+                <div class="tease-text reveal">
+                    <p class="eyebrow">Salon menüsü</p>
+                    <h2>Masaya ne gelsin?</h2>
+                    <p>Baklava ve kadayıftan sütlü tatlılara, pastadan dondurmaya, çaydan kahveye.</p>
+                    <a class="btn btn-choc" href="menu.html">Menüyü gör →</a>
+                </div>
+                <ul class="tease-chips reveal" style="--d:.1s">
+                    <li><a href="menu.html#baklava">Baklava &amp; kadayıf</a></li>
+                    <li><a href="menu.html#sutlu">Sütlü tatlılar</a></li>
+                    <li><a href="menu.html#pasta">Pasta &amp; ekler</a></li>
+                    <li><a href="menu.html#dondurma">Dondurma</a></li>
+                    <li><a href="menu.html#kurabiye">Kurabiye &amp; unlu mamül</a></li>
+                    <li><a href="menu.html#sicak">Sıcak içecekler</a></li>
+                    <li><a href="menu.html#soguk">Soğuk içecekler</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec case-sec" id="pasta">
+            <div class="wrap case-grid">
+                <div class="case-text reveal">
+                    <p class="eyebrow">Pasta &amp; sütlü tatlı</p>
+                    <h2>Vitrinde her renkten bir tatlı.</h2>
+                    <p>Çikolatalı, fıstıklı ve frambuazlı pastalar, porsiyonluk sütlü tatlılar ve tepsi tatlıları.
+                        Beğendiğini seç; masada ye ya da paket yaptır.</p>
+                    <ul class="pills">
+                        <li>Yaş pasta &amp; tart</li>
+                        <li>Sütlü tatlılar</li>
+                        <li>Tepsi tatlıları</li>
+                    </ul>
+                </div>
+                <figure class="case-photo reveal" style="--d:.1s">
+                    <img src="img/vitrin.jpg"
+                        alt="Vitrinde çikolatalı, fıstıklı ve frambuazlı pastalar, sütlü tatlılar ve tepsi tatlıları"
+                        width="1400" height="788" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="sec nuts-sec" id="kuruyemis">
+            <div class="wrap nuts-grid">
+                <figure class="photo-frame reveal">
+                    <img src="img/kuruyemis.jpg"
+                        alt="Şeffaf kavanozlarda kuruyemişler, altıgen raflarda yöresel ürünler ve terazi" width="1000" height="987" loading="lazy">
+                </figure>
+                <div class="nuts-text reveal" style="--d:.1s">
+                    <p class="eyebrow">Kuruyemiş &amp; çerez</p>
+                    <h2>Kavanoz kavanoz, gramına kadar.</h2>
+                    <p>Şeffaf kavanozlarda duran kuruyemişi ve çerezi istediğin kadar tartıyoruz. Harput dibek kahvesi,
+                        Ağın leblebisi, lokum, pestil ve köme gibi yöresel ürünler de burada.</p>
+                    <ul class="chips">
+                        <li>Antep Fıstığı</li>
+                        <li>Fındık</li>
+                        <li>Badem</li>
+                        <li>Kaju</li>
+                        <li>Ağın Leblebisi</li>
+                        <li>Kabak Çekirdeği</li>
+                        <li>Kuru Kayısı</li>
+                        <li>Lokum</li>
+                        <li>Pestil &amp; Köme</li>
+                        <li>Harput Dibek Kahvesi</li>
+                        <li>Bal &amp; Pekmez</li>
+                        <li>Baharat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec place-sec" id="mekan">
+            <div class="wrap place-grid">
+                <div class="place-text reveal">
+                    <p class="eyebrow">Mekân</p>
+                    <h2>Tuğla duvarın önünde bir çay.</h2>
+                    <p>Çini panolar, tuğla duvar ve rahat koltuklar. Tatlını al, masaya geç, çayını yudumla. Acelen
+                        varsa paket yaptır.</p>
+                    <ul class="facts">
+                        <li><strong>4,8</strong>Google Haritalar puanı</li>
+                        <li>Kovancılar, Elazığ Cd.</li>
+                    </ul>
+                </div>
+                <figure class="photo-frame photo-frame-sm reveal" style="--d:.1s">
+                    <img src="img/mekan.jpg" alt="Liva tabelası, çini panolu tuğla duvar, masalar ve sandalyeler"
+                        width="382" height="510" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="wrap cta-in">
+                <div>
+                    <h2>Bir ürünü sormak ister misiniz?</h2>
+                    <p>Tepsi, pasta ya da çerez için WhatsApp'tan yazın; sorularınızı yanıtlayalım.</p>
+                </div>
+                <div class="cta-actions">
+                    <a class="btn btn-choc"
+                        href="https://wa.me/905327970793?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank"
+                        rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1.5-4.4A8.5 8.5 0 1 1 20.5 11.5z" />
+                            <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+                        </svg>
+                        WhatsApp'tan yaz
+                    </a>
+                    <a class="btn btn-line-dark" href="tel:+905327970793">0532 797 07 93</a>
+                    <a class="btn btn-line-dark" href="https://www.instagram.com/livapastanecerez/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r=".8" /></svg> Instagram</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="contact" id="iletisim">
+        <div class="wrap">
+            <div class="contact-grid">
+                <div class="contact-brand">
+                    <div class="brand brand-lg"><span class="brand-word"><span class="brand-name">Liva</span><span class="brand-sub">Pastane &amp; Çerez</span></span></div>
+                </div>
+                <div>
+                    <h3>Adres</h3>
+                    <p>Çarşıbaşı Mah, Elazığ Cd. No: 27/C<br>23850 Kovancılar / Elazığ</p>
+                    <a class="maps"
+                        href="https://maps.app.goo.gl/EhvRi629uMp2oGf47"
+                        target="_blank" rel="noopener">Yol tarifi al →</a>
+                </div>
+                <div>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+905327970793">0532 797 07 93</a></p>
+                </div>
+                <div>
+                    <h3>Sosyal medya</h3>
+                    <p><a class="insta" href="https://www.instagram.com/livapastanecerez/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r=".8" /></svg>@livapastanecerez</a></p>
+                </div>
+            </div>
+            <p class="copy">© 2026 Liva Pastane &amp; Çerez. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <a class="fab" href="https://wa.me/905327970793?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank"
+        rel="noopener" aria-label="WhatsApp'tan yaz">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1.5-4.4A8.5 8.5 0 1 1 20.5 11.5z" />
+            <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+        </svg>
+    </a>
+
+    <script>
+        document.documentElement.classList.add('js');
+
+        // Açılış animasyonu: yazı tipleri yüklenince başlar, bitince ya da dokunulunca kaldırılır
+        const intro = document.getElementById('intro');
+        const root = document.documentElement;
+        function endIntro() {
+            root.classList.remove('intro-on', 'intro-go');
+            if (intro) intro.remove();
+        }
+        if (intro && root.classList.contains('intro-on')) {
+            let started = false;
+            const start = () => {
+                if (started) return;
+                started = true;
+                root.classList.add('intro-go');
+                setTimeout(endIntro, 3400);
+            };
+            const fontsReady = document.fonts && document.fonts.load
+                ? Promise.all([document.fonts.load('400 40px Norican'), document.fonts.load('400 16px Gloock')])
+                : Promise.resolve();
+            Promise.race([fontsReady, new Promise(r => setTimeout(r, 900))]).then(start, start);
+            setTimeout(start, 1200);
+            setTimeout(endIntro, 6000); // son güvence
+            ['pointerdown', 'keydown'].forEach(ev => window.addEventListener(ev, endIntro, { once: true }));
+        } else if (intro) {
+            intro.remove();
+        }
+
+        // Mobil menü
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.getElementById('nav');
+        function setMenu(open) {
+            nav.classList.toggle('open', open);
+            menuBtn.setAttribute('aria-expanded', String(open));
+        }
+        menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+        nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+
+        // Kaydırınca beliren öğeler
+        const items = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            items.forEach(el => io.observe(el));
+        } else {
+            items.forEach(el => el.classList.add('in'));
+        }
+    </script>
+
+</body>
+
+</html>
